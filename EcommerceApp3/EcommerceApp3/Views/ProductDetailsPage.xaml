@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:viewModel="clr-namespace:EcommerceApp3.ViewModels"
+             xmlns:models="clr-namespace:EcommerceApp3.Model"
+             x:DataType="viewModel:ProductDetailsPageViewModel"
+             x:Class="EcommerceApp3.Views.ProductDetailsPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Welcome" />
+               
+            </StackLayout>
+            <Frame IsClippedToBounds="False"
+                   Margin="20,10,20,0"
+                   CornerRadius="30"
+                   HeightRequest="50"
+                   Padding="0">
+
+
+                <Entry Placeholder="Search for items or more.."
+                       HeightRequest="50"
+                       WidthRequest="500"
+                       Margin="20,0,20,0"></Entry>
+            </Frame>
+            <StackLayout>
+
+                <Grid Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           CornerRadius="15"
+                           BackgroundColor="purple">
+                        
+
+                        <StackLayout>
+
+                            <Label Text="Grocery"
+                                   TextColor="White"
+                                   FontSize="15"></Label>
+                        </StackLayout>
+
+                    </Frame>
+                    <Frame Grid.Column="1"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           CornerRadius="15"
+                           BackgroundColor="purple">
+                        <StackLayout>
+                            <Label Text="Mobiles"
+                                   TextColor="White"
+                                   FontSize="14" />
+
+                        </StackLayout>
+
+                    </Frame>
+                    <Frame Grid.Column="2"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           CornerRadius="15"
+                           BackgroundColor="Purple">
+                        <StackLayout>
+                            <Label Text="Fashion"
+                                   TextColor="white"
+                                   FontSize="15" />
+                        </StackLayout>
+
+                    </Frame>
+
+                </Grid>
+
+
+
+
+            </StackLayout>
+            <StackLayout>
+                <CollectionView ItemsSource="{Binding Products}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Product">
+                            <Grid Padding="30"
+                                  Margin="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding ImageUrl}"
+                                       HeightRequest="200"
+                                       WidthRequest="200"
+                                       Grid.Row="0"></Image>
+                                <Label Text="{Binding ProductName}"
+                                       Grid.Row="1"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       FontSize="20" />
+                                <Label Text="{Binding Description}"
+                                       Grid.Row="2" />
+                                <Label Text="{Binding Price,StringFormat='Price Starts From {0}'}"
+                                       Grid.Row="3"
+                                       TextColor="blue" />
+                                <Button Text="Cart"
+                                        VerticalOptions="Center"
+                                        CornerRadius="25"
+                                        Grid.Row="4"
+                                        BackgroundColor="Green"
+                                        TextColor="White"
+                                        WidthRequest="50"
+                                        HeightRequest="50"
+                                        Command="{Binding CartCommand, Source={RelativeSource AncestorType={x:Type viewModel:ProductDetailsPageViewModel}}}"
+                                        CommandParameter="{Binding .}"/>
+                                <BoxView Grid.Row="5"
+                                         HorizontalOptions="FillAndExpand"
+                                         Grid.ColumnSpan="3"
+                                         VerticalOptions="Center"
+                                         HeightRequest="3"
+                                         WidthRequest="5"
+                                         BackgroundColor="DarkGray">
+                                </BoxView>
+                            </Grid>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

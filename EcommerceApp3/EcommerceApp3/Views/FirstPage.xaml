@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" xmlns:viewmodels="clr-namespace:EcommerceApp3.ViewModels" x:DataType="viewmodels:FirstPageViewModel"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EcommerceApp3.Views.FirstPage"
+            >
+    <RelativeLayout>
+      
+        <StackLayout>
+            <Image Source="startimage.jpg" HeightRequest="500" WidthRequest="450"/>
+            <Button Text="Let's Get Started" FontSize="15"
+                              
+                                TextColor="White"
+                                BackgroundColor="Purple"
+                                 HorizontalOptions="Center"
+                    
+                               
+                                CornerRadius="10"
+                                Command="{Binding StartedCommand}"></Button>
+            </StackLayout>
+
+           
+       
+
+
+    </RelativeLayout>
+</ContentPage>
+

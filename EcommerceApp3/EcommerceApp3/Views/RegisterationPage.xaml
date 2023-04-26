@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" 
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EcommerceApp3.Views.RegisterationPage">
+
+
+    <StackLayout>
+        <Grid Margin="20,0,20,0" VerticalOptions="CenterAndExpand" RowSpacing="20">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" >
+                <Entry Placeholder="Email ID"
+                               FontSize="16"
+                                Text="{Binding EmailID}"
+                              >
+
+                </Entry>
+
+            </StackLayout>
+            <StackLayout Grid.Row="1"
+                                >
+                <Entry Placeholder="UserName"
+                               FontSize="16"
+                               Text="{Binding UserName}"
+                              
+                               IsPassword="True"/>
+
+            </StackLayout>
+            <StackLayout Grid.Row="2">
+
+                <Entry Placeholder="Password"
+                               FontSize="16"
+                              Text="{Binding Password}"
+                              />
+
+            </StackLayout>
+            <StackLayout Grid.Row="3">
+
+                <Entry Placeholder="Confirm Password"
+                               FontSize="16"
+                               Text="{Binding ConfirmPassword}"
+                                />
+
+            </StackLayout>
+            <StackLayout Grid.Row="4">
+
+                <Entry Placeholder="Phone Number"
+                               FontSize="16"
+                               Text="{Binding PhoneNumber}"
+                               />
+
+            </StackLayout>
+            <StackLayout Grid.Row="5">
+
+                <Button Text="Register"
+                                HorizontalOptions="CenterAndExpand"
+                                TextColor="White"
+                                BackgroundColor="Purple"
+                                WidthRequest="200"
+                                HeightRequest="60"
+                                CornerRadius="20"
+                                Command="{Binding RegisterCommand}"/>
+
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

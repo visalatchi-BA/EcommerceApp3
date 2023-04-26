@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:viewmodels="clr-namespace:EcommerceApp3.ViewModels"
+            
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EcommerceApp3.Views.CartPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="30"
+                  Margin="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--<Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+
+                            </Grid.ColumnDefinitions>-->
+                <Image Source="{Binding SeperateDetails.ImageUrl}"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       Grid.Row="0"></Image>
+                <Label Text="{Binding SeperateDetails.ProductName}"
+                       Grid.Row="1"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       FontSize="20" />
+                <Label Text="{Binding SeperateDetails.Description}"
+                       Grid.Row="2" />
+                <Label Text="{Binding SeperateDetails.Price,StringFormat='Price Starts From {0}'}"
+                       Grid.Row="3"
+                       TextColor="blue" />
+               
+
+            </Grid>
+            
+            <StackLayout>
+                <Button Text="Buy Now"
+                        TextColor="White"
+                        BackgroundColor="Purple"
+                        CornerRadius="15"
+                        HorizontalOptions="CenterAndExpand"></Button>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Logout"
+                       TextColor="White"
+                       BackgroundColor="Green"
+                        CornerRadius="20"
+                        HeightRequest="60"
+                        
+                        HorizontalOptions="CenterAndExpand" Margin="5"
+                        Command="{Binding LogoutCommand}"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+  
+</ContentPage>

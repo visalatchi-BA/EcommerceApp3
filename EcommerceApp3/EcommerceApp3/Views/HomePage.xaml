@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" xmlns:viewmodels="clr-namespace:EcommerceApp3.ViewModels" xmlns:model="clr-namespace:EcommerceApp3.Model"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EcommerceApp3.Views.HomePage">
+   
+        <!--<StackLayout>
+            <Frame IsClippedToBounds="False"
+                       Margin="20,10,20,0"
+                       CornerRadius="30"
+                       HeightRequest="50"
+                       Padding="0">
+
+
+                <Entry Placeholder="Search for items or more.."
+                           HeightRequest="50"
+                           WidthRequest="500"
+                           Margin="20,0,20,0"></Entry>
+            </Frame>
+            <Frame>
+                <Image Source="homeimage.jpg" />
+            </Frame>
+            <ListView>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <ScrollView>
+                                    <ListView >
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <StackLayout>
+                                                        <Image Source=""/>
+
+
+                                                    </StackLayout>
+
+
+
+
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+
+                                    </ListView>
+
+                                </ScrollView>
+
+                                --><!--<Label Text="{Binding Id}"/>
+                                <Label Text="{Binding Title}"/>
+                                <Label Text="{Binding Description}"/>
+                                <Label Text="{Binding Price}"/>
+                                <Label Text="{Binding DiscountPercentage}"/>
+                                <Label Text="{Binding Rating}"/>
+                                <Label Text="{Binding Stock}"/>
+                                <Label Text="{Binding Brand}"/>
+                                <Label Text="{Binding Category}"/>--><!--
+                                
+
+
+                            </StackLayout>
+
+
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>-->
+
+
+
+
+</ContentPage>
